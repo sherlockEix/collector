@@ -5,19 +5,31 @@
 
     <groupId>io.github.sherlockeix</groupId>
     <artifactId>collector</artifactId>
-    <version>0.0.1-beta</version>
+    <version>0.0.1</version>
     <name>collector</name>
     <description>collector</description>
+    <url>https://github.com/sherlockEix/collector</url>
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
+    <developers>
+        <developer>
+            <email>sherlockEix@163.com</email>
+            <name>sherlockEix</name>
+        </developer>
+    </developers>
     <scm>
-        <url>https://github.com/sherlockEix/collector</url>
+        <url>https://github.com/sherlockEix/collector.git</url>
         <developerConnection>https://github.com/sherlockEix</developerConnection>
     </scm>
+    <licenses>
+        <license>
+            <name>The Apache License</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -54,6 +66,48 @@
 
     <build>
         <finalName>collector</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-source</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <distributionManagement>
