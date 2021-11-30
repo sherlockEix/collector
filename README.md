@@ -6,7 +6,7 @@
 <dependency>
     <groupId>io.github.sherlockeix</groupId>
     <artifactId>collector</artifactId>
-    <version>0.0.1-beta</version>
+    <version>0.0.1</version>
 </dependency>
 ```
 
